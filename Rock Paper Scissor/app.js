@@ -1,53 +1,55 @@
 let compScore = 0;
 let selfScore = 0;
-let selfMove = 0;
-let whoWin = "";
-let num = 0;
+let msg = document.querySelector("#MoveSelector");
 
-function myMove(selfClickedValue) {
-  selfMove = selfClickedValue;
+function generateCompMove() {
+  let options = ["rock", "paper", "sissor"];
+  let optIdx = Math.floor(Math.random() * 3);
+  return options[optIdx];
 }
 
-function checkWhoWin() {
-  let comp = Math.floor(Math.random() * 3) + 1;
+const resultDraw = () => {
+  msg.innerText = "Draw";
+  msg.style.backgroundColor = "grey"; // Reset the background color
+};
+
+function checkWhoWin(selfClickedValue) {
+  let selfMove = selfClickedValue;
+  let whoWin = "";
+  console.log("usermove", selfMove);
+  let compMove = generateCompMove();
+  console.log("compmove", compMove);
+
+  if (selfMove === compMove) resultDraw();
   if (
-    (selfMove === 1 && comp === 2) ||
-    (selfMove === 2 && comp === 3) ||
-    (selfMove === 3 && comp === 1)
+    (selfMove === "rock" && compMove === "paper") ||
+    (selfMove === "paper" && compMove === "sissor") ||
+    (selfMove === "sissor" && compMove === "rock")
   ) {
     whoWin = "compWin";
     compScore += 1;
-    return compScore;
   }
   if (
-    (selfMove === 2 && comp === 1) ||
-    (selfMove === 3 && comp === 2) ||
-    (selfMove === 1 && comp === 3)
+    (selfMove === "paper" && compMove === "rock") ||
+    (selfMove === "sissor" && compMove === "paper") ||
+    (selfMove === "rock" && compMove === "sissor")
   ) {
     whoWin = "selfWin";
     selfScore += 1;
-    return selfScore;
   }
-  if (selfMove === comp) {
-    return 0;
-  }
+  displayResult(selfMove, compMove, whoWin);
 }
 
-function displayResult() {
-  checkWhoWin();
-  const button = document.querySelector("button");
-
+function displayResult(selfMove, compMove, whoWin) {
   if (whoWin === "selfWin") {
-    button.innerText = "You won";
-    button.style.backgroundColor = "green"; // Change the background color to green
-  } else if (whoWin === "compWin") {
-    button.innerText = "Comp Won";
-    button.style.backgroundColor = "red"; // Reset the background color
-  } else {
-    button.innerText = "Draw";
-    button.style.backgroundColor = "grey"; // Reset the background color
+    msg.innerText = `You won. ${selfMove} beats ${compMove}`;
+    msg.style.backgroundColor = "green"; // Change the background color to green
   }
-  whoWin = "";
+  if (whoWin === "compWin") {
+    msg.innerText = `Comp Won. ${compMove} beats your ${selfMove}`;
+    msg.style.backgroundColor = "red"; // Reset the background color
+  }
+
   document.querySelector("#selfResult").innerText = `${selfScore}`;
   document.querySelector("#compResult").innerText = ` ${compScore}`;
 }
