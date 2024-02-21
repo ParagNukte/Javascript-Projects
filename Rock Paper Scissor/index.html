@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Game</title>
+  </head>
+  <body>
+    <div>
+      <img id="rock" src="./rock.png" alt="No" onclick="myMove(1); " />
+      <img id="paper" src="./paper.png" alt="No" onclick="myMove(2); " />
+      <img id="sissor" src="./sissor.png" alt="No" onclick="myMove(3); " />
+    </div>
+
+    <div class="score">
+      <span> You <span id="selfResult"> 0 </span></span>
+      <span> Comp <span id="compResult"> 0 </span></span
+      >
+    </div>
+
+    <div>
+      <button type="button" id="MoveSelector" onclick="displayResult()">
+        Pick Your Move
+      </button>
+    </div>
+
+    <!-- <div>
+      <button
+        type="button"
+        class="PlayAgainBtn"
+        onclick="document.querySelector('#MoveSelector').innerText = 'Pick Your Move'; document.querySelector(
+          '#MoveSelector' 
+        ).style.backgroundColor = '' "
+      >
+        Play Again
+      </button>
+    </div> -->
+
+    <script src="./app.js"></script>
+  </body>
+</html>

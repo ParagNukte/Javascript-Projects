@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  padding: 15px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+img:active{
+    border: 2px solid black;
+}
+
+.score,
+span {
+  margin: 15px;
+  padding: 20px;
+  font-size: 20px;
+}
+span{
+    font-size: 30px;
+}
+
+#MoveSelector,
+.PlayAgainBtn {
+  margin: 10px;
+  padding: 20px;
+  font-size: 18px;
+  border-radius: 25px;
+}
+#MoveSelector{
+    background-color: blueviolet;
+    color: aliceblue;
+}
