@@ -1,10 +1,19 @@
 * {
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
-body {
-  height: 100vh;
+h1 {
+  background-color: #6a84b0;
+  height: 7rem;
+  font-size: 5rem;
+  line-height: 7rem;
+  color: aliceblue;
+}
+
+.container {
+  margin-top: 3rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,33 +21,38 @@ body {
 }
 
 img {
+  margin-top: 5rem;
   padding: 15px;
   height: 150px;
   border-radius: 50%;
 }
 
-img:active{
-    border: 2px solid black;
+img:active {
+  border: 2px solid black;
 }
 
-.score,
-span {
-  margin: 15px;
-  padding: 20px;
-  font-size: 20px;
+.score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8rem;
+  font-size: 30px;
+  gap: 50px;
 }
-span{
-    font-size: 30px;
+#selfResult,
+#compResult {
+  font-size: 50px;
 }
 
-#MoveSelector,
-.PlayAgainBtn {
-  margin: 10px;
+#MoveSelector {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+
   padding: 20px;
   font-size: 18px;
   border-radius: 25px;
-}
-#MoveSelector{
-    background-color: blueviolet;
-    color: aliceblue;
+  width: 20%;
+  background-color: blueviolet;
+  color: aliceblue;
 }

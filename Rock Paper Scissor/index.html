@@ -8,34 +8,40 @@
     <title>Game</title>
   </head>
   <body>
-    <div>
-      <img
-        id="rock"
-        src="./rock.png"
-        alt="No"
-        onclick="checkWhoWin('rock')"
-      />
-      <img
-        id="paper"
-        src="./paper.png"
-        alt="No"
-        onclick="checkWhoWin('paper')"
-      />
-      <img
-        id="sissor"
-        src="./sissor.png"
-        alt="No"
-        onclick="checkWhoWin('sissor')"
-      />
+    <h1>Rock Paper Scissors</h1>
+    <div class="container">
+      <div>
+        <img
+          id="rock"
+          src="./rock.png"
+          alt="No"
+          onclick="checkWhoWin('rock')"
+        />
+        <img
+          id="paper"
+          src="./paper.png"
+          alt="No"
+          onclick="checkWhoWin('paper')"
+        />
+        <img
+          id="sissor"
+          src="./sissor.png"
+          alt="No"
+          onclick="checkWhoWin('sissor')"
+        />
+      </div>
+      <div class="score">
+        <div>
+          <div id="selfResult">0</div>
+          You
+        </div>
+        <div>
+          <div id="compResult">0</div>
+          Comp
+        </div>
+      </div>
+      <div id="MoveSelector">Pick Your Move</div>
+      <script src="./app.js"></script>
     </div>
-
-    <div class="score">
-      <span> You <span id="selfResult"> 0 </span></span>
-      <span> Comp <span id="compResult"> 0 </span></span>
-    </div>
-
-    <div id="MoveSelector">Pick Your Move</div>
-
-    <script src="./app.js"></script>
   </body>
 </html>
