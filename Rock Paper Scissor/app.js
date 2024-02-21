@@ -16,9 +16,7 @@ const resultDraw = () => {
 function checkWhoWin(selfClickedValue) {
   let selfMove = selfClickedValue;
   let whoWin = "";
-  console.log("usermove", selfMove);
   let compMove = generateCompMove();
-  console.log("compmove", compMove);
 
   if (selfMove === compMove) resultDraw();
   if (
